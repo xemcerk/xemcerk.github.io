@@ -1,5 +1,1 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+Hi, I'm a 3rd year grad student at Beijing University of Posts and Telecommunications. Research interests include NLP and multi-modal.
