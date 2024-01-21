@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Shi Li"
+title                    : "Shi Li's Personal Homepage"
 title_separator          : "-"
 name                     : &name "Shi Li (黎时)"
 description              : &description "An AI enthusiast and continuous learner."
