@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Shi Li (黎时)"
-  avatar           : "profile.png"
+  avatar           : "profile_shili.png"
   bio              : "A Machine Learning Engineer at Didi Chuxing, particularly interested in Large Language Models (LLM) and everything around them. Mostly identified as an NLP/Recommender System practitioner."
   location         : "Beijing, China"
   employer         :
