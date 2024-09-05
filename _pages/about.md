@@ -15,7 +15,7 @@ My research interests are centered around Multi-modal Large Language Models (MLL
 
 News
 ---
-- **2024.9**: I joined [the CAMMA research group](https://camma.unistra.fr/) at the University of Strasbourg and officially began my PhD! :tada:
+- **2024.9**: I joined [the CAMMA research group](https://camma.unistra.fr/) at the University of Strasbourg and officially began my PhD!
 
 
 Experience
