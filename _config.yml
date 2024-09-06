@@ -5,6 +5,10 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+# Google search console verification
+head:
+  - <meta name="google-site-verification" content="kXB27d0ovtXOzveN3jfjmuBcObRaSaXiLT6rIZizZEg" />
+
 # Site Settings
 locale                   : "en-US"
 title                    : "Shi Li's Personal Homepage"
