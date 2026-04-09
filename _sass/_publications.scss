@@ -1,0 +1,174 @@
+/* ==========================================================================
+   PUBLICATIONS PAGE
+   ========================================================================== */
+
+.pub-list {
+  .pub-year {
+    margin: 1.5rem 0 -1.8rem;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    text-align: right;
+    color: #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .pub-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    margin-bottom: 1.6em;
+
+    .pub-image {
+      flex: 0 0 130px;
+
+      img {
+        width: 130px;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+    }
+
+    .pub-info {
+      flex: 1;
+      min-width: 0;
+      padding-right: 20px;
+
+      .pub-title {
+        font-size: $type-size-5;
+        font-weight: normal;
+        color: #333;
+        margin: 0 0 0.3em;
+        line-height: 1.4;
+      }
+
+      .pub-authors {
+        font-size: 14.5px;
+        font-style: italic;
+        color: $dark-gray;
+        margin: 0 0 0.2em;
+
+        strong {
+          font-weight: 500;
+          color: #333;
+        }
+      }
+
+      .pub-venue {
+        font-size: 14.5px;
+        color: $dark-gray;
+        margin: 0 0 0.5em;
+
+        em {
+          font-weight: 500;
+          color: #333;
+        }
+      }
+
+      .pub-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-top: 2px;
+
+        a {
+          display: inline-block;
+          margin: 0.4rem 0.5rem 0.4rem 0;
+          padding: 0.25rem 0.9rem;
+          font-size: $type-size-7;
+          font-weight: 400;
+          border-radius: 3px;
+          border: 1px solid;
+          background: transparent;
+          text-decoration: none !important;
+          transition: color 0.25s, background-color 0.25s !important;
+
+          &[data-type="abs"] {
+            color: #2698ba;
+            border-color: #2698ba;
+            &:hover, &.active { color: #fff !important; background-color: #2698ba; }
+          }
+          &[data-type="pdf"] {
+            color: #ff3636;
+            border-color: #ff3636;
+            &:hover { color: #fff; background-color: #ff3636; }
+          }
+          &[data-type="arxiv"] {
+            color: #ff3636;
+            border-color: #ff3636;
+            &:hover { color: #fff; background-color: #ff3636; }
+          }
+          &[data-type="project"] {
+            color: #0076df;
+            border-color: #0076df;
+            &:hover { color: #fff; background-color: #0076df; }
+          }
+          &[data-type="code"] {
+            color: #b509ac;
+            border-color: #b509ac;
+            &:hover { color: #fff; background-color: #b509ac; }
+          }
+          &[data-type="demo"] {
+            color: #f29105;
+            border-color: #f29105;
+            &:hover { color: #fff; background-color: #f29105; }
+          }
+          &[data-type="media"] {
+            color: #00a334;
+            border-color: #00a334;
+            &:hover { color: #fff; background-color: #00a334; }
+          }
+          &[data-type="link"] {
+            color: #0076df;
+            border-color: #0076df;
+            &:hover { color: #fff; background-color: #0076df; }
+          }
+        }
+      }
+
+      .pub-abstract {
+        margin-top: 0.5rem;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 0.875rem;
+        text-align: justify;
+        border: dashed 1.5px #fff;
+        border-radius: 5px;
+        transition: max-height 0.5s, border-color 0.5s !important;
+
+        p {
+          margin: 10px;
+          line-height: 1.4em;
+        }
+
+        &.active {
+          max-height: 35rem;
+          border-color: #e8e8e8;
+        }
+      }
+    }
+  }
+
+  /* Stack vertically on small screens */
+  @media (max-width: 576px) {
+    .pub-card {
+      flex-direction: column;
+
+      .pub-image {
+        flex: none;
+        margin-bottom: 0.5rem;
+
+        img {
+          width: 55%;
+        }
+      }
+
+      .pub-info .pub-title { font-size: 0.8rem; }
+      .pub-info .pub-authors,
+      .pub-info .pub-venue,
+      .pub-info .pub-abstract { font-size: 0.75rem; }
+      .pub-info .pub-abstract.active { max-height: 40rem; }
+    }
+  }
+}

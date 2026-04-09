@@ -1,0 +1,54 @@
+{% assign pub_id = post.id | remove: "/" | remove: " " %}
+
+<div class="pub-card">
+  {% if post.image and post.image != "" %}
+  <div class="pub-image">
+    {% if post.image contains "://" %}
+      {% assign img_src = post.image %}
+    {% elsif post.image contains "/" %}
+      {% assign img_src = post.image | prepend: "/" | replace: "//", "/" %}
+    {% else %}
+      {% assign img_src = post.image | prepend: "/images/" %}
+    {% endif %}
+    <img src="{{ img_src }}" alt="{{ post.title }}">
+  </div>
+  {% endif %}
+  <div class="pub-info">
+    <p class="pub-title">{{ post.title }}</p>
+    {% if post.authors and post.authors != "" %}
+    <p class="pub-authors">{{ post.authors }}</p>
+    {% endif %}
+    {% if post.venue and post.venue != "" %}
+    <p class="pub-venue">{{ post.venue }}</p>
+    {% endif %}
+    <div class="pub-links">
+      {% assign stripped = post.content | strip %}
+      {% if stripped != "" %}
+        <a href="#" class="abs-toggle" data-target="abs-{{ pub_id }}" data-type="abs">ABS</a>
+      {% endif %}
+      {% if post.paperurl and post.paperurl != "" %}
+        <a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer" data-type="pdf">PDF</a>
+      {% endif %}
+      {% if post.arxiv and post.arxiv != "" %}
+        <a href="{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" data-type="arxiv">ARXIV</a>
+      {% endif %}
+      {% if post.project and post.project != "" %}
+        <a href="{{ post.project }}" target="_blank" rel="noopener noreferrer" data-type="project">PROJECT</a>
+      {% endif %}
+      {% if post.code and post.code != "" %}
+        <a href="{{ post.code }}" target="_blank" rel="noopener noreferrer" data-type="code">CODE</a>
+      {% endif %}
+      {% if post.demo and post.demo != "" %}
+        <a href="{{ post.demo }}" target="_blank" rel="noopener noreferrer" data-type="demo">DEMO</a>
+      {% endif %}
+      {% if post.media and post.media != "" %}
+        <a href="{{ post.media }}" target="_blank" rel="noopener noreferrer" data-type="media">MEDIA</a>
+      {% endif %}
+    </div>
+    {% if stripped != "" %}
+    <div class="pub-abstract" id="abs-{{ pub_id }}">
+      {{ post.content }}
+    </div>
+    {% endif %}
+  </div>
+</div>
