@@ -2,173 +2,218 @@
    PUBLICATIONS PAGE
    ========================================================================== */
 
+/* Match yeliu.dev's page title and description styling on the publications page */
+.archive > .page__title {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.page-description {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #505050;
+
+  a { font-weight: 300; }
+
+  @media (max-width: 576px) {
+    font-size: 0.8rem;
+  }
+}
+
 .pub-list {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", Arial, sans-serif;
+  font-weight: 300;
+
+  * { font-weight: 300; }
+  strong, em, b { font-weight: 500; }
+
   .pub-year {
-    margin: 1.5rem 0 -1.8rem;
-    padding: 1rem 0;
+    margin: 2rem 0 0.5rem;
+    padding: 0.75rem 0 0;
     font-size: 1.5rem;
+    font-weight: normal;
     text-align: right;
     color: #e8e8e8;
     border-top: 1px solid #e8e8e8;
   }
 
-  .pub-card {
-    display: flex;
-    align-items: center;
-    gap: 1.2em;
-    margin-bottom: 1.6em;
+  .bibliography {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
-    .pub-image {
-      flex: 0 0 130px;
+    > li {
+      list-style: none;
+    }
 
-      img {
-        width: 130px;
-        height: auto;
-        display: block;
-        border-radius: 4px;
-        object-fit: cover;
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      width: 94.5%;
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  .pub-preview {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-top: -15px;
+    padding-right: 0;
+    align-self: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .pub-info {
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-right: 20px;
+    padding-left: 15px;
+    min-width: 0;
+
+    .pub-title {
+      font-weight: normal;
+      color: #333;
+      line-height: 1.4;
+
+      sup {
+        font-weight: normal;
       }
     }
 
-    .pub-info {
-      flex: 1;
-      min-width: 0;
-      padding-right: 20px;
+    .pub-author {
+      margin-top: 1.5px;
+      font-size: 14.5px;
+      font-style: italic;
+      color: $dark-gray;
 
-      .pub-title {
-        font-size: $type-size-5;
-        font-weight: normal;
+      em {
+        font-weight: 500;
         color: #333;
-        margin: 0 0 0.3em;
-        line-height: 1.4;
       }
+    }
 
-      .pub-authors {
-        font-size: 14.5px;
-        font-style: italic;
-        color: $dark-gray;
-        margin: 0 0 0.2em;
+    .pub-venue {
+      margin-top: 1.5px;
+      font-size: 14.5px;
+      color: $dark-gray;
 
-        strong {
-          font-weight: 500;
-          color: #333;
-        }
+      em {
+        font-weight: 500;
+        color: #333;
       }
+    }
 
-      .pub-venue {
-        font-size: 14.5px;
-        color: $dark-gray;
-        margin: 0 0 0.5em;
+    .pub-links {
+      margin-top: 2px;
+      display: flex;
+      flex-wrap: wrap;
 
-        em {
-          font-weight: 500;
-          color: #333;
-        }
-      }
-
-      .pub-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0;
-        margin-top: 2px;
-
-        a {
-          display: inline-block;
-          margin: 0.4rem 0.5rem 0.4rem 0;
-          padding: 0.25rem 0.9rem;
-          font-size: $type-size-7;
-          font-weight: 400;
-          border-radius: 3px;
-          border: 1px solid;
-          background: transparent;
-          text-decoration: none !important;
-          transition: color 0.25s, background-color 0.25s !important;
-
-          &[data-type="abs"] {
-            color: #2698ba;
-            border-color: #2698ba;
-            &:hover, &.active { color: #fff !important; background-color: #2698ba; }
-          }
-          &[data-type="pdf"] {
-            color: #ff3636;
-            border-color: #ff3636;
-            &:hover { color: #fff; background-color: #ff3636; }
-          }
-          &[data-type="arxiv"] {
-            color: #ff3636;
-            border-color: #ff3636;
-            &:hover { color: #fff; background-color: #ff3636; }
-          }
-          &[data-type="project"] {
-            color: #0076df;
-            border-color: #0076df;
-            &:hover { color: #fff; background-color: #0076df; }
-          }
-          &[data-type="code"] {
-            color: #b509ac;
-            border-color: #b509ac;
-            &:hover { color: #fff; background-color: #b509ac; }
-          }
-          &[data-type="demo"] {
-            color: #f29105;
-            border-color: #f29105;
-            &:hover { color: #fff; background-color: #f29105; }
-          }
-          &[data-type="media"] {
-            color: #00a334;
-            border-color: #00a334;
-            &:hover { color: #fff; background-color: #00a334; }
-          }
-          &[data-type="link"] {
-            color: #0076df;
-            border-color: #0076df;
-            &:hover { color: #fff; background-color: #0076df; }
-          }
-        }
-      }
-
-      .pub-abstract {
-        margin-top: 0.5rem;
-        max-height: 0;
-        overflow: hidden;
+      .pub-btn {
+        display: inline-block;
+        margin: 0.4rem 0.5rem 0.4rem 0;
+        padding: 0.25rem 0.9rem;
         font-size: 0.875rem;
-        text-align: justify;
-        border: dashed 1.5px #fff;
-        border-radius: 5px;
-        transition: max-height 0.5s, border-color 0.5s !important;
+        font-weight: 400 !important;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border-radius: 0.2rem;
+        border: 1px solid !important;
+        background: transparent !important;
+        text-decoration: none !important;
+        cursor: pointer;
+        transition: color 0.25s, background-color 0.25s !important;
+      }
 
-        p {
-          margin: 10px;
-          line-height: 1.4em;
-        }
+      .pub-btn.abs {
+        color: #2698ba !important;
+        border-color: #2698ba !important;
+        &:hover, &.active { color: #fff !important; background-color: #2698ba !important; }
+      }
+      .pub-btn.pdf,
+      .pub-btn.arxiv {
+        color: #ff3636 !important;
+        border-color: #ff3636 !important;
+        &:hover { color: #fff !important; background-color: #ff3636 !important; }
+      }
+      .pub-btn.project {
+        color: #0076df !important;
+        border-color: #0076df !important;
+        &:hover { color: #fff !important; background-color: #0076df !important; }
+      }
+      .pub-btn.code {
+        color: #b509ac !important;
+        border-color: #b509ac !important;
+        &:hover { color: #fff !important; background-color: #b509ac !important; }
+      }
+      .pub-btn.demo {
+        color: #f29105 !important;
+        border-color: #f29105 !important;
+        &:hover { color: #fff !important; background-color: #f29105 !important; }
+      }
+      .pub-btn.media {
+        color: #00a334 !important;
+        border-color: #00a334 !important;
+        &:hover { color: #fff !important; background-color: #00a334 !important; }
+      }
+    }
 
-        &.active {
-          max-height: 35rem;
-          border-color: #e8e8e8;
-        }
+    .pub-abstract {
+      margin-top: 0.5rem;
+      max-height: 0;
+      overflow: hidden;
+      font-size: 0.875rem;
+      text-align: justify;
+      border: dashed 1.5px #fff;
+      border-radius: 5px;
+      transition: max-height 0.5s, border-color 0.5s !important;
+
+      p {
+        margin: 10px;
+        line-height: 1.4em;
+      }
+
+      &.active {
+        max-height: 60rem;
+        border-color: #e8e8e8;
       }
     }
   }
 
   /* Stack vertically on small screens */
   @media (max-width: 576px) {
-    .pub-card {
+    .bibliography .row {
       flex-direction: column;
+    }
 
-      .pub-image {
-        flex: none;
-        margin-bottom: 0.5rem;
+    .pub-preview {
+      flex: none;
+      max-width: 100%;
+      width: 55%;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      padding-right: 0;
+    }
 
-        img {
-          width: 55%;
-        }
-      }
+    .pub-info {
+      flex: none;
+      max-width: 100%;
+      padding-left: 0;
 
-      .pub-info .pub-title { font-size: 0.8rem; }
-      .pub-info .pub-authors,
-      .pub-info .pub-venue,
-      .pub-info .pub-abstract { font-size: 0.75rem; }
-      .pub-info .pub-abstract.active { max-height: 40rem; }
+      .pub-title { font-size: 0.8rem; }
+      .pub-author,
+      .pub-venue,
+      .pub-abstract { font-size: 0.75rem; }
+      .pub-abstract.active { max-height: 40rem; }
     }
   }
 }

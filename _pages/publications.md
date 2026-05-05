@@ -12,29 +12,36 @@ author_profile: false
 {% assign pub_papers = all_pubs | where_exp: "item", "item.category != 'preprint'" %}
 {% assign pubs_by_year = pub_papers | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-{% if preprints.size > 0 %}
-## Preprints
+<div class="page-description">
+Check out my <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">Google Scholar</a> for more information.
+</div>
+
 <div class="pub-list">
+
+{% if preprints.size > 0 %}
+<h2 class="pub-year">Preprints</h2>
+<ol class="bibliography">
 {% for post in preprints %}
   {% include publication-card.html %}
 {% endfor %}
-</div>
+</ol>
 {% endif %}
 
-## Publications
-<div class="pub-list">
 {% for year_group in pubs_by_year %}
-  <h2 class="pub-year">{{ year_group.name }}</h2>
-  {% for post in year_group.items %}
-    {% include publication-card.html %}
-  {% endfor %}
+<h2 class="pub-year">{{ year_group.name }}</h2>
+<ol class="bibliography">
+{% for post in year_group.items %}
+  {% include publication-card.html %}
 {% endfor %}
+</ol>
+{% endfor %}
+
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   // Expand/collapse abstracts
-  document.querySelectorAll('.abs-toggle').forEach(function (btn) {
+  document.querySelectorAll('.pub-btn.abs').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var target = document.getElementById(this.getAttribute('data-target'));
@@ -43,12 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Bold author name
+  // Highlight author name (italic + bold via <em>, matching yeliu.dev style)
   var selfName = 'Shi Li';
-  document.querySelectorAll('.pub-authors').forEach(function (el) {
+  document.querySelectorAll('.pub-author').forEach(function (el) {
     el.innerHTML = el.innerHTML.replace(
       new RegExp('(' + selfName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'g'),
-      '<strong>$1</strong>'
+      '<em>$1</em>'
     );
   });
 });
