@@ -40,7 +40,6 @@ Check out my <a href="https://scholar.google.com/citations?user=YOUR_ID" target=
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Expand/collapse abstracts
   document.querySelectorAll('.pub-btn.abs').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -50,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Highlight author name (italic + bold via <em>, matching yeliu.dev style)
   var selfName = 'Shi Li';
   document.querySelectorAll('.pub-author').forEach(function (el) {
     el.innerHTML = el.innerHTML.replace(
