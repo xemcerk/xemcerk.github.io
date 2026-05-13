@@ -13,7 +13,7 @@ author_profile: false
 {% assign pubs_by_year = pub_papers | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="page-description">
-Check out my <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">Google Scholar</a> for more information.
+Check out my <a href="https://scholar.google.com/citations?user=-Be-KcMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> for more information.
 </div>
 
 <div class="pub-list">
